@@ -1,0 +1,4 @@
+@import "tailwindcss";
+.key {
+  @apply h-40 w-40 bg-[#00000075] rounded-lg flex justify-center;
+}

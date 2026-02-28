@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.key {
+  @apply h-30 w-50 m-4 rounded-2xl flex flex-col justify-center items-center border text-[#EEFF14] cursor-pointer;
+}
+.Day {
+  @apply text-4xl text-center font-bold text-[#EEFF14];
+}
+.name {
+  @apply text-2xl text-center text-[#EEFF14];
+}

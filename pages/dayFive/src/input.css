@@ -1,0 +1,27 @@
+@import "tailwindcss";
+* {
+  user-select: none;
+}
+.panel {
+  @apply text-white text-6xl text-shadow-2xs flex flex-col justify-around items-center bg-center bg-cover;
+  height: 100%;
+  flex: 1;
+  font-family: "Permanent Marker", cursive;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  filter: contrast(1.2) brightness(1.1) saturate(1.15);
+}
+.panel > p {
+  text-shadow: 0 0 5px black;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active-top > *:first-child {
+  transform: translateY(-400%);
+}
+.active-top > *:last-child {
+  transform: translateY(400%);
+}
+.open-card {
+  flex-grow: 4;
+}

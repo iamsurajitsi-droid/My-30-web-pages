@@ -1,0 +1,91 @@
+<!-- Do : npm run dev -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLOCK</title>
+    <link href="../dayTwo/src/output.css" rel="stylesheet" />
+    <link rel="icon" href="icon_clock.png" />
+
+    <style>
+      .stBtn {
+        opacity: 100%;
+        transition: all 0.5s ease;
+      }
+    </style>
+  </head>
+  <body class="h-screen bg-[#ebc7c7] flex justify-center items-center">
+    <div
+      class="Clock_Base h-100 w-100 border-16 border-[#fc9d9d] rounded-full relative"
+    >
+      <!-- Start Button  -->
+      <div
+        class="stBtn h-full w-full bg-[#fc9d9d] rounded-full relative cursor-pointer flex justify-center items-center z-50"
+      >
+        <p class="text-[#ebc7c7] text-8xl">START</p>
+      </div>
+      <!-- Hour  -->
+      <div class="Dices hour_Dice flex justify-end z-1">
+        <div class="w-2/3 h-full bg-[#fc9d9d]"></div>
+      </div>
+      <!-- Minute  -->
+      <div class="Dices min_Dice flex justify-end z-2">
+        <div class="w-4/5 h-full bg-[#fc9d9d]"></div>
+      </div>
+      <!-- Second  -->
+      <div class="Dices sec_Dice flex justify-end z-3">
+        <div class="w-5/6 h-full bg-[#fc9d9d]"></div>
+      </div>
+      <!-- mid-Dot  -->
+      <div
+        class="dot h-4 w-4 absolute bg-[#fc9d9d] top-1/2 left-1/2 z-5 -translate-x-1/2 -translate-y-1/2 rounded-full"
+      ></div>
+    </div>
+
+    <!-- Audios -->
+    <audio id="tick" src="Sounds/Tick.mp3"></audio>
+
+    <script>
+      const stBtn = document.querySelector(".stBtn");
+      getTime();
+      stBtn.addEventListener("click", () => {
+        stBtn.style.opacity = "0";
+        setTimeout(() => {
+          stBtn.style.display = "none";
+        }, 1000);
+        setInterval(() => {
+          getTime();
+          const tick = document.querySelector("#tick");
+          tick.currentTime = 0;
+          tick.play();
+        }, 1000);
+      });
+      function getTime() {
+        let now = new Date();
+        // Seconds
+        let secDeg = (360 / 60) * now.getSeconds();
+        //audio tag
+        const tick = document.querySelector("#tick");
+        const sec_Dice = document.querySelector(".sec_Dice");
+        sec_Dice.style.transform = `rotate(${secDeg}deg)`;
+
+        // console.log(now.getSeconds());
+
+        //Min
+        let minDeg = (360 / 60) * now.getMinutes();
+        const min_Dice = document.querySelector(".min_Dice");
+        min_Dice.style.transform = `rotate(${minDeg}deg)`;
+        // console.log(now.getMinutes());
+
+        let hourDeg =
+          (360 / 12) * now.getHours() + (30 / 60) * now.getMinutes();
+        const hour_Dice = document.querySelector(".hour_Dice");
+        hour_Dice.style.transform = `rotate(${hourDeg}deg)`;
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Notes:-
+Add a start button on the clock as Absolute item on the clock full size of the clock when the clock pressed by the user the clock start means the time interval will start with the sound tik tik -->

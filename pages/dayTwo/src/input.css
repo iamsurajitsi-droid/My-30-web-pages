@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.Dices {
+  @apply absolute h-4 w-1/2 origin-right top-1/2 -translate-y-2 rotate-90 rounded-md transition-transform
+}

@@ -1,0 +1,72 @@
+<!-- Do : npm run dev -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Panel Gallery</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .panel1 {
+        background-image: url("./images/birds.jpg");
+      }
+      .panel2 {
+        background-image: url("./images/Maa_Durga.jpg");
+      }
+      .panel3 {
+        background-image: url("./images/Food.jpg");
+      }
+      .panel4 {
+        background-image: url("./images/car_photo.jpg");
+      }
+      .panel5 {
+        background-image: url("./images/moon.jpg");
+      }
+    </style>
+  </head>
+  <!-- Body -->
+  <body class="bg-[#0611e3] h-screen w-screen overflow-y-hidden">
+    <div class="Panels h-full flex">
+      <div class="panel panel1 active-top active-bottom">
+        <p>We</p>
+        <p>Love</p>
+        <p>Birds</p>
+      </div>
+      <div
+        class="panel panel2 active-top active-bottom bg-[url('../images/Maa_Durga.jpg')]"
+      >
+        <p>Let's</p>
+        <p>Enjoy</p>
+        <p>More</p>
+      </div>
+      <div
+        class="panel panel3 active-top active-bottom bg-[url('/images/Food.jpg')]"
+      >
+        <p>Suck</p>
+        <p>Them</p>
+        <p>All</p>
+      </div>
+      <div
+        class="panel panel4 active-top active-bottom bg-[url('\images\birds.jpg')]"
+      >
+        <p>Be</p>
+        <p>Safe</p>
+        <p>Drive</p>
+      </div>
+      <div
+        class="panel panel5 active-top active-bottom bg-[url('/images/moon.jpg')]"
+      >
+        <p>Love</p>
+        <p>Moon</p>
+        <p>Light</p>
+      </div>
+    </div>
+    <script src="../dayFive/script.js"></script>
+  </body>
+</html>

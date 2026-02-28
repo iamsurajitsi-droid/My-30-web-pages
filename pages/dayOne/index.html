@@ -1,0 +1,108 @@
+<!-- Do : npm run dev -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/src/output.css" rel="stylesheet" />
+    <style>
+      body {
+        background-image: url(background.jpg);
+      }
+
+      .keyText {
+        font-size: 4rem;
+        text-align: center;
+        color: aliceblue;
+        p {
+          font-size: 2rem;
+          color: rgb(223, 168, 3);
+        }
+      }
+
+      /* Pressed */
+      .pressed {
+        border: 0.5rem solid orange;
+        transform: skew(1.2);
+      }
+
+      .key {
+        transition: all 0.07s ease;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-cover bg-center bg-no-repeat min-h-screen flex justify-center items-center"
+  >
+    <div class="container h-auto w-auto flex gap-2">
+      <div class="key" data-key="65">
+        <span class="keyText">
+          A
+          <p>Boom</p>
+        </span>
+      </div>
+      <div class="key" data-key="83">
+        <span class="keyText">
+          S
+          <p>Clap</p></span
+        >
+      </div>
+      <div class="key" data-key="68">
+        <span class="keyText">
+          D
+          <p>Hihit</p>
+        </span>
+      </div>
+      <div class="key" data-key="70">
+        <span class="keyText">
+          F
+          <p>Kick</p>
+        </span>
+      </div>
+      <div class="key" data-key="71">
+        <span class="keyText">
+          G
+          <p>Openhat</p>
+        </span>
+      </div>
+      <div class="key" data-key="72">
+        <span class="keyText">
+          H
+          <p>Ride</p>
+        </span>
+      </div>
+      <div class="key" data-key="74">
+        <span class="keyText">
+          J
+          <p>Snare</p>
+        </span>
+      </div>
+      <div class="key" data-key="75">
+        <span class="keyText" >
+          K
+          <p>Tink</p>
+        </span>
+      </div>
+      <div class="key" data-key="76">
+        <span class="keyText">
+          L
+          <p>Tom</p>
+        </span>
+      </div>
+    </div>
+
+    <!-- audios -->
+    <audio data-key="65" src="sounds/boom.wav"></audio>
+    <audio data-key="83" src="sounds/clap.wav"></audio>
+    <audio data-key="68" src="sounds/hihat.wav"></audio>
+    <audio data-key="70" src="sounds/kick.wav"></audio>
+    <audio data-key="71" src="sounds/openhat.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tink.wav"></audio>
+    <audio data-key="76" src="sounds/tom.wav"></audio>
+
+    <script src="drum_script.js"></script>
+  </body>
+</html>
