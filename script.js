@@ -11,12 +11,12 @@
 //   },
 // };
 
-// "/" is removed from path Note that (its for only me)
+
 let gridObj = [
   { Day: 1, name: "Drum Set", path: "pages/dayOne/index.html" },
   { Day: 2, name: "Analog Clock", path: "pages/dayTwo/index.html" },
   { Day: 3, name: "CSS Variables", path: "pages/dayThree/index.html" },
-  { Day: 4, name: "Array Cardio P1", path: "./pages/dayFour/index.html" },
+  { Day: 4, name: "Array Cardio P1", path: "pages/dayFour/index.html" },
   { Day: 5, name: "Panel Gallery", path: "pages/dayFive/index.html" },
 ];
 
