@@ -50,5 +50,5 @@ Goal: Strengthen core JavaScript skills (DOM manipulation, events, arrays, async
 ### Technologies used
 
 - Pure Vanilla JavaScript (ES6+)
-- HTML5 & CSS3
-- No external libraries or frameworks
+- HTML5 , CSS3 & Tailwind CSS 
+- No external JS libraries or frameworks
