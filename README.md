@@ -5,6 +5,8 @@ This repository contains **all 30 mini-projects** I built while following Wes Bo
 
 Goal: Strengthen core JavaScript skills (DOM manipulation, events, arrays, async, fetch, canvas, audio, geolocation, speech recognition, and more) by building something cool every day.
 
+🚀 **Live Demo:** https://kick-it-devs-javascript30.netlify.app/
+
 ### What's inside?
 
 - 30 fully functional, responsive web mini-apps
