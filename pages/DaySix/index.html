@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Type Ahead 👀</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <form class="search-form">
+      <input type="text" class="search" placeholder="City or State" />
+      <ul class="suggestions">
+        <li>Filter for a city</li>
+        <li>or a state</li>
+      </ul>
+    </form>
+    <script>
+      const cityies = [];
+      let searchWord = "";
+      //It **Fetch** and make array named ++cityies++
+      (function makeArr() {
+        const endpoint =
+          "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+
+        fetch(endpoint).then((blob) => {
+          blob.json().then((arrData) => {
+            cityies.push(...arrData);
+          });
+        });
+        setTimeout(() => {
+          console.log(cityies);
+        }, 3000);
+      })();
+
+      //It pairs input.search in real-time changes
+      const searchInput = document.querySelector("input.search");
+      document.addEventListener("input", () => {
+        searchWord = searchInput.value;
+        // console.log(searchWord);
+        // trigger filtering
+        findMatches();
+        displayFunction();
+      });
+
+      //Find the Matching Arrays
+      let matches = [];
+
+      function findMatches() {
+        matches = cityies.filter((x) => {
+          const reg = new RegExp(searchWord, "gi");
+          return x.city.match(reg) || x.state.match(reg);
+        });
+        // console.log(matches);
+      }
+
+      //Display Function
+      let html = "";
+      function displayFunction() {
+        html = matches
+          .map((x) => {
+            const reg = new RegExp(searchWord, "gi");
+            const cityName = x.city.replace(
+              reg,
+              `<span class="hl">${searchWord}</span>`,
+            );
+            const stateName = x.state.replace(
+              reg,
+              `<span class="hl">${searchWord}</span>`,
+            );
+            return ` <li>
+            <span class="name">${cityName},${stateName}</span>
+            <span class="population">${numberWithCommas(x.population)}</span>
+            </li>`;
+          })
+          .join(" ");
+        suggestions.innerHTML = html;
+      }
+      const suggestions = document.querySelector(".suggestions");
+
+      // Adds commas
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Notes:
+ 
+Learn regex
+filter
+string.match()
+
+
+
+
+-->
